@@ -5,6 +5,8 @@ package studio.magemonkey.divinity.modules.list.customitems;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.jetbrains.annotations.NotNull;
 import studio.magemonkey.codex.config.api.JYML;
 import studio.magemonkey.codex.util.constants.JStrings;
@@ -88,6 +90,17 @@ public class CustomItemsManager extends QModuleDrop<CustomItem> {
         protected void processLore(@NotNull JYML cfg, @NotNull QModuleDrop<?> module) {
             validateTier(cfg);
             super.processLore(cfg, module);
+        }
+
+        @Override
+        public ItemStack create() {
+            ItemStack item = super.create();
+            ItemMeta meta = item.getItemMeta();
+            if (meta != null && this.tier != null && this.tier.getTooltipStyle() != null) {
+                meta.setTooltipStyle(this.tier.getTooltipStyle());
+                item.setItemMeta(meta);
+            }
+            return item;
         }
     }
 

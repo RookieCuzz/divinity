@@ -19,27 +19,43 @@ tiers:
   default:
     color: '&7'
     name: '%TIER_COLOR%Default'
+    tooltip: '%TIER_COLOR%Default'
+    tooltip-style: 'divinity:default'
   cursed:
     color: '&4'
     name: '%TIER_COLOR%Cursed'
+    tooltip: '%TIER_COLOR%Cursed'
+    tooltip-style: 'divinity:cursed'
   common:
     color: '&r&f'
     name: '%TIER_COLOR%Common'
+    tooltip: '%TIER_COLOR%Common'
+    tooltip-style: 'divinity:common'
   rare:
     color: '&a'
     name: '%TIER_COLOR%Rare'
+    tooltip: '%TIER_COLOR%Rare'
+    tooltip-style: 'divinity:rare'
   superior:
     color: '&9'
     name: '%TIER_COLOR%Superior'
+    tooltip: '%TIER_COLOR%Superior'
+    tooltip-style: 'divinity:superior'
   fabled:
     color: '&e'
     name: '%TIER_COLOR%Fabled'
+    tooltip: '%TIER_COLOR%Fabled'
+    tooltip-style: 'divinity:fabled'
   eternal:
     color: '&6'
     name: '%TIER_COLOR%Eternal'
+    tooltip: '%TIER_COLOR%Eternal'
+    tooltip-style: 'divinity:eternal'
   mythic:
     color: '&5'
     name: '%TIER_COLOR%Mythic'
+    tooltip: '%TIER_COLOR%Mythic'
+    tooltip-style: 'divinity:mythic'
 
 modules: { }
 

@@ -3,6 +3,7 @@ package studio.magemonkey.divinity.config;
 import org.bukkit.Material;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.NamespacedKey;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import studio.magemonkey.codex.api.items.ItemType;
@@ -41,8 +42,19 @@ public class Config extends IConfigTemplate {
             String path2     = "tiers." + tierId + ".";
             String tierColor = cfg.getString(path2 + "color", "&f");
             String tierName  = cfg.getString(path2 + "name", tierId);
+            String tierTooltip = cfg.getString(path2 + "tooltip", tierName);
 
-            Tier tier = new Tier(tierId, tierName, tierColor);
+            Tier tier = new Tier(tierId, tierName, tierColor, tierTooltip);
+            String tooltipStyleStr = cfg.getString(path2 + "tooltip-style", null);
+            if (tooltipStyleStr != null) {
+                String trimmed = tooltipStyleStr.trim();
+                if (!trimmed.isEmpty()) {
+                    NamespacedKey key = NamespacedKey.fromString(trimmed);
+                    if (key != null) {
+                        tier.setTooltipStyle(key);
+                    }
+                }
+            }
             TIERS_MAP.put(tier.getId(), tier);
         }
 

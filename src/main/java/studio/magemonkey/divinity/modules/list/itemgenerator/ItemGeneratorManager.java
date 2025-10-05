@@ -824,6 +824,11 @@ public class ItemGeneratorManager extends QModuleDrop<GeneratorItem> {
                 }
             }
 
+            // Apply tier tooltip style if available
+            if (this.getTier() != null && this.getTier().getTooltipStyle() != null) {
+                meta.setTooltipStyle(this.getTier().getTooltipStyle());
+            }
+
             // Prepare prefixes and suffixes
             String prefixTier = "";
             String suffixTier = "";

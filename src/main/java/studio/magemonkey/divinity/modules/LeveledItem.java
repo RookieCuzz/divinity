@@ -217,6 +217,13 @@ public abstract class LeveledItem extends ModuleItem implements Tiered {
         ItemStats.setModule(item, this.getModule().getId());
         ItemStats.setLevel(item, this.validateLevel(lvl));
 
+        // Apply tier tooltip style if available
+        ItemMeta meta = item.getItemMeta();
+        if (meta != null && this.tier != null && this.tier.getTooltipStyle() != null) {
+            meta.setTooltipStyle(this.tier.getTooltipStyle());
+            item.setItemMeta(meta);
+        }
+
         if (!(this instanceof RatedItem))
             this.replacePlaceholders(item);
 

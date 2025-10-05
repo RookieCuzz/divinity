@@ -43,6 +43,7 @@ public class ItemTags {
 
     public static final String PLACEHOLDER_TIER_NAME  = "%TIER_NAME%";
     public static final String PLACEHOLDER_TIER_COLOR = "%TIER_COLOR%";
+    public static final String PLACEHOLDER_TIER_TOOLTIP = "%TIER_TOOLTIP%";
 
     public static final String PLACEHOLDER_REQ_USER_CLASS        = "%USER_CLASS%";
     public static final String PLACEHOLDER_REQ_USER_BANNED_CLASS = "%USER_BANNED_CLASS%";
